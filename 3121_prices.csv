@@ -1,4 +1,5 @@
-spot_per_kwh,per_kwh,date,state_time,end_time,renewables,tariff_info_season,tariff_info_period,spike_status
-16.32112,31.24926,2021-07-07,"07/07/2021, 10:30:01 pm","07/07/2021, 11:00:00 pm",7.761,,peak,none
-16.64208,31.58588,2021-07-07,"07/07/2021, 10:30:01 pm","07/07/2021, 11:00:00 pm",7.698,,peak,none
-23.3332,38.60352,2021-07-07,"07/07/2021, 10:00:01 pm","07/07/2021, 10:30:00 pm",6.75511786497717,,peak,none
+requested_at,spot_per_kwh,per_kwh,date,state_time,end_time,renewables,tariff_info_season,tariff_info_period,spike_status
+,16.32112,31.24926,2021-07-07,"07/07/2021, 10:30:01 pm","07/07/2021, 11:00:00 pm",7.761,,peak,none
+,16.64208,31.58588,2021-07-07,"07/07/2021, 10:30:01 pm","07/07/2021, 11:00:00 pm",7.698,,peak,none
+,23.3332,38.60352,2021-07-07,"07/07/2021, 10:00:01 pm","07/07/2021, 10:30:00 pm",6.75511786497717,,peak,none
+
