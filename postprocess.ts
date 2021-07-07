@@ -68,7 +68,7 @@
 //     }
 //   ]
 
-import { readJSON, writeCSV } from 'https://deno.land/x/flat@0.0.11/mod.ts' 
+import { readJSON, readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.11/mod.ts'
 
 const json = await readJSON(Deno.args[0])
 const csvFileName = "3121_prices.csv"
