@@ -78,7 +78,7 @@ let csvData = await readCSV(csvFilePath)
 const currentActualRate = {
     "spot_per_kwh": json[0].spotPerKwh,
     "per_kwh": json[0].perKwh,
-    "date": new Date(json[0].date).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}),
+    "date": json[0].date,
     "state_time": new Date(json[0].startTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}),
     "end_time": new Date(json[0].endTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}),
     "renewables": json[0].renewables,
