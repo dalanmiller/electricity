@@ -72,7 +72,7 @@ import { readJSON, readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.11/mod
 
 const json = await readJSON(Deno.args[0])
 
-const csvFilePath = "/3121_prices.csv"
+const csvFilePath = "3121_prices.csv"
 let csvData = await readCSV(csvFilePath)
 
 const currentActualRate = {
