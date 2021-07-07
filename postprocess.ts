@@ -71,8 +71,9 @@
 import { readJSON, readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.11/mod.ts'
 
 const json = await readJSON(Deno.args[0])
-const csvFileName = "3121_prices.csv"
-const csvData = await readCSV(csvFileName)
+
+const csvFilePath = "/3121_prices.csv"
+let csvData = await readCSV(csvFilePath)
 
 const currentActualRate = {
     "spot_per_kwh": json[0].spotPerKwh,
@@ -87,5 +88,5 @@ const currentActualRate = {
 }
 
 csvData.unshift(currentActualRate);
-await writeCSV(csvFileName, currentActualRate) 
+await writeCSV(csvFilePath, csvData) 
 
