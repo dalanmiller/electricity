@@ -1,0 +1,1 @@
+[{"type":"CurrentInterval","date":"2021-07-07","duration":30,"startTime":"2021-07-07T11:30:01Z","endTime":"2021-07-07T12:00:00Z","nemTime":"2021-07-07T22:00:00+10:00","perKwh":33.46965,"renewables":5.610448734589984,"spotPerKwh":18.438200000000002,"channelType":"general","spikeStatus":"none","tariffInformation":{"period":"peak"},"estimate":false}]
