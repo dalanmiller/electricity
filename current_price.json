@@ -1,1 +1,1 @@
-[{"type":"CurrentInterval","date":"2021-08-01","duration":30,"startTime":"2021-08-01T08:30:01Z","endTime":"2021-08-01T09:00:00Z","nemTime":"2021-08-01T19:00:00+10:00","perKwh":37.56167,"renewables":4.388,"spotPerKwh":22.82323,"channelType":"general","spikeStatus":"none","estimate":false}]
+[{"type":"CurrentInterval","date":"2021-08-01","duration":30,"startTime":"2021-08-01T09:00:01Z","endTime":"2021-08-01T09:30:00Z","nemTime":"2021-08-01T19:30:00+10:00","perKwh":38.87212,"renewables":4.801,"spotPerKwh":24.07128,"channelType":"general","spikeStatus":"none","estimate":true}]
