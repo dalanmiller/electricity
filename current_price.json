@@ -1,1 +1,1 @@
-[]
+[{"type":"CurrentInterval","date":"2021-10-01","duration":30,"startTime":"2021-09-30T17:00:01Z","endTime":"2021-09-30T17:30:00Z","nemTime":"2021-10-01T03:30:00+10:00","perKwh":8.08346,"renewables":17.212,"spotPerKwh":-0.98963,"channelType":"general","spikeStatus":"none","tariffInformation":{"period":"offPeak"},"estimate":true}]
