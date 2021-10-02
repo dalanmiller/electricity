@@ -77,15 +77,15 @@ let csvData = await readCSV(csvFilePath)
 
 const currentActualRate = {
     "requested_at": new Date(), // UTC time
-    "spot_per_kwh": json[0]?.spotPerKwh,
-    "per_kwh": json[0]?.perKwh,
-    "date": json[0]?.date, // Melb/Syd time ?
-    "state_time": new Date(json[0]?.startTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}), // UTC converted to Melb
-    "end_time": new Date(json[0]?.endTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}), // UTC converted to Melb
-    "renewables": json[0]?.renewables,
-    "tariff_info_season": json[0]?.tariffInformation?.season,
-    "tariff_info_period": json[0]?.tariffInformation?.period,
-    "spike_status": json[0]?.spikeStatus
+    "spot_per_kwh": json[0].spotPerKwh,
+    "per_kwh": json[0].perKwh,
+    "date": json[0].date, // Melb/Syd time ? 
+    "state_time": new Date(json[0].startTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}), // UTC converted to Melb
+    "end_time": new Date(json[0].endTime).toLocaleString("en-AU", {timeZone: "Australia/Melbourne"}), // UTC converted to Melb
+    "renewables": json[0].renewables,
+    "tariff_info_season": json[0].tariffInformation?.season,
+    "tariff_info_period": json[0].tariffInformation?.period,
+    "spike_status": json[0].spikeStatus
 }
 
 csvData.unshift(currentActualRate);
