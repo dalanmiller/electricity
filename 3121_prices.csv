@@ -1,4 +1,5 @@
 requested_at,spot_per_kwh,per_kwh,date,state_time,end_time,renewables,tariff_info_season,tariff_info_period,spike_status
+"""2021-10-02T07:18:28.015Z""",,,,Invalid Date,Invalid Date,,,,
 """2021-10-02T07:17:00.792Z""",,,,Invalid Date,Invalid Date,,,,
 """2021-10-02T06:31:02.947Z""",1.16052,23.49215,2021-10-02,"02/10/2021, 4:30:01 pm","02/10/2021, 5:00:00 pm",20.182,,peak,none
 """2021-10-02T05:34:24.920Z""",1.00037,23.32436,2021-10-02,"02/10/2021, 3:30:01 pm","02/10/2021, 4:00:00 pm",19.117,,peak,none
