@@ -21,7 +21,7 @@ jobs:
       - name: Fetch data 
         uses: githubocto/flat@v3
         with:
-          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/prices/current?next=0&previous=0&resolution=30
+          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/prices/current
           authorization: Bearer ${{ secrets.AMBER_KEY }} 
           downloaded_filename: current_price.json 
           postprocess: postprocess.ts
