@@ -1,1 +1,1 @@
-[{"type":"CurrentInterval","date":"2022-03-02","duration":30,"startTime":"2022-03-02T01:30:01Z","endTime":"2022-03-02T02:00:00Z","nemTime":"2022-03-02T12:00:00+10:00","perKwh":15.22189,"renewables":22.460665166687793,"spotPerKwh":5.82387,"channelType":"general","spikeStatus":"none","tariffInformation":{"period":"offPeak"},"descriptor":"veryLow","range":{"min":0.921,"max":10.81898},"estimate":true}]
+[]
