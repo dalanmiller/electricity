@@ -1,0 +1,27 @@
+name: Collect electricity usage data from AmberElectric
+
+on:
+  push:
+    paths:
+      - .github/workflows/usage.yml 
+  workflow_dispatch: 
+  schedule:
+    - cron: '0 16 * * *' 
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Check out repo
+        uses: actions/checkout@v3
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x     
+      - name: Fetch data 
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage
+          authorization: Bearer ${{ secrets.AMBER_KEY }} 
+          downloaded_filename: usage.json 
+          postprocess: usage.ts
