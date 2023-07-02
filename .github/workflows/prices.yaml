@@ -1,4 +1,4 @@
-name: Collect electricity data from AmberElectric
+name: Collect electricity price data from AmberElectric
 
 on:
   push:
