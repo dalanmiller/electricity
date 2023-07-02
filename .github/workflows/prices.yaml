@@ -3,7 +3,7 @@ name: Collect electricity price data from AmberElectric
 on:
   push:
     paths:
-      - .github/workflows/flat.yml 
+      - .github/workflows/prices.yaml 
   workflow_dispatch: 
   schedule:
     - cron: '*/5 * * * *' 
