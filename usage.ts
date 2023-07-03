@@ -37,9 +37,8 @@ const csvFilePath = "3121_usage.csv";
 let csvData: Record<string, unknown>[] = [];
 csvData = await readCSV(csvFilePath);
 
-const newRows = [];
-for (const item of json) {
-  const usageItem = {
+const newRows = json.map((item: any) => {
+  return {
     "requested_at": new Date(), // UTC time
     "type": item.type,
     "quality": item.quality,
@@ -47,10 +46,10 @@ for (const item of json) {
     "per_kwh": item.perKwh,
     "kwh_usage_in_timeframe": item.kwh,
     // "date": json[0].date, // Melb/Syd time ?
-    "start_time": new Date(item.startTime).toLocaleString("en-AU", {
+    "local_start_time": new Date(item.startTime).toLocaleString("en-AU", {
       timeZone: "Australia/Melbourne",
     }), // UTC converted to Melb
-    "end_time": new Date(item.endTime).toLocaleString("en-AU", {
+    "local_end_time": new Date(item.endTime).toLocaleString("en-AU", {
       timeZone: "Australia/Melbourne",
     }), // UTC converted to Melb
     "renewables": item.renewables, // Percentage renewables in grid in that timeframe
@@ -59,8 +58,11 @@ for (const item of json) {
     "spike_status": item.spikeStatus,
     "descriptor": item.descriptor, // Describes the current price. Gives you an indication of how cheap the price is in relation to the average VMO and DMO. Note: Negative is no longer used. It has been replaced with extremelyLow.
   };
-  newRows.unshift(usageItem);
-}
+});
 
+// Want most recent first
+newRows.reverse();
+// Push them all onto the front of array
 csvData.unshift(...newRows);
+
 await writeCSV(csvFilePath, csvData);
