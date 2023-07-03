@@ -20,11 +20,11 @@ jobs:
           deno-version: v1.x     
       - name: "Determine yesterday's date in Australia/Melbourne"
         id: date 
-        run: TZ=Australia/Melbourne && date --date='yesterday' +'%Y-%m-%d'
+        run: TZ=Australia/Melbourne date --date='yesterday' +'%Y-%m-%d'
       - name: Fetch data 
         uses: githubocto/flat@v3
         with:
-          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate={{ steps.date.outputs.date }}&endDate={{ steps.date.outputs.date }}
+          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate={{steps.date.outputs.date}}&endDate={{steps.date.outputs.date}}
           authorization: Bearer ${{ secrets.AMBER_USAGE_KEY }} 
           downloaded_filename: usage.json 
           postprocess: usage.ts
