@@ -45,10 +45,11 @@ const newRows = json.map((item: any) => {
     "spot_per_kwh": item.spotPerKwh,
     "per_kwh": item.perKwh,
     "kwh_usage_in_timeframe": item.kwh,
-    // "date": json[0].date, // Melb/Syd time ?
+    "utc_start_time": item.startTime,
     "local_start_time": new Date(item.startTime).toLocaleString("en-AU", {
       timeZone: "Australia/Melbourne",
     }), // UTC converted to Melb
+    "utc_end_time": item.endTime,
     "local_end_time": new Date(item.endTime).toLocaleString("en-AU", {
       timeZone: "Australia/Melbourne",
     }), // UTC converted to Melb
