@@ -39,7 +39,6 @@ csvData = await readCSV(csvFilePath);
 
 const newRows = json.map((item: any) => {
   return {
-    "requested_at": new Date(), // UTC time
     "type": item.type,
     "quality": item.quality,
     "spot_per_kwh": item.spotPerKwh,
