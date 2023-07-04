@@ -24,11 +24,11 @@ jobs:
           echo "date=$(TZ=Australia/Melbourne date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: "DEBUG URL"
         run: |
-          echo https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}
+          echo "https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}"
       - name: Fetch data 
         uses: githubocto/flat@v3
         with:
-          http_url: https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}
+          http_url: "https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}"
           authorization: Bearer ${{ secrets.AMBER_USAGE_KEY }} 
           downloaded_filename: usage.json 
           postprocess: usage.ts
