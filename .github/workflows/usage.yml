@@ -21,7 +21,7 @@ jobs:
       - name: "Determine yesterday's date in Australia/Melbourne"
         id: date 
         run: | 
-          echo "{date}={$(TZ=Australia/Melbourne date --date='yesterday' +'%Y-%m-%d')}" >> $GITHUB_ENV
+          echo "{date}={$(TZ=Australia/Melbourne date --date='yesterday' +'%Y-%m-%d')}" >> $GITHUB_STATE
       - name: "DEBUG URL"
         run: |
           echo https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}
