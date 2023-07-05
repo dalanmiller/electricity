@@ -6,7 +6,7 @@ on:
       - .github/workflows/usage.yml 
   workflow_dispatch: 
   schedule:
-    - cron: '0 16 * * *' 
+    - cron: '0 20 * * *' 
 
 jobs:
   scheduled:
@@ -22,9 +22,9 @@ jobs:
         id: date 
         run: | 
           echo "date=$(TZ=Australia/Melbourne date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
-      - name: "DEBUG URL"
-        run: |
-          echo "https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}"
+#       - name: "DEBUG URL"
+#         run: |
+#           echo "https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/usage?startDate=${{env.date}}&endDate=${{env.date}}"
       - name: Fetch data 
         uses: githubocto/flat@v3
         with:
