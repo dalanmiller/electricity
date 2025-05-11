@@ -6,7 +6,11 @@ on:
       - .github/workflows/prices.yaml 
   workflow_dispatch: 
   schedule:
-    - cron: '*/15 * * * *' 
+    - cron: '*/60 * * * *' 
+    
+concurrency:
+  group: price-collection
+  cancel-in-progress: true
 
 jobs:
   scheduled:
@@ -14,6 +18,19 @@ jobs:
     steps: 
       - name: Check out repo
         uses: actions/checkout@v3
+
+      - name: Check if price data changed
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.AMBER_KEY }}" \
+            https://api.amber.com.au/v1/sites/01E8RD8PYMAHBTJCSNFA73KH8A/prices/current \
+            -o new_price.json
+
+          if [ -f current_price.json ] && cmp -s new_price.json current_price.json; then
+            echo "No change in price data. Exiting."
+            exit 0
+          fi
+
+          mv new_price.json current_price.json
       - name: Setup deno
         uses: denoland/setup-deno@main
         with:
